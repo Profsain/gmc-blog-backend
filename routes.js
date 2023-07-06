@@ -31,15 +31,6 @@ router.get("/posts/:id", async (req, res) => {
 	}
 })
 
-router.get('/posts/:title', async (req, res) => {
-    try {
-        const post = await Post.findOne({ title: req.params.title })
-        res.send(post)
-    } catch {
-        res.status(404)
-        res.send({ error: "Post doesn't exist!" })
-    }
-});
 
 // update post by id
 router.patch("/posts/:id", async (req, res) => { 
